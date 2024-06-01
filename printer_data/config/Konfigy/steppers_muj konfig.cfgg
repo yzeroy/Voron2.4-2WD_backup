@@ -1,60 +1,82 @@
 [stepper_x]
 step_pin: PG0
-dir_pin: PG1
+dir_pin: !PG1
 enable_pin: !PF15
-rotation_distance: 32
+rotation_distance: 50
 microsteps: 64
-full_steps_per_rotation: 200
-endstop_pin: tmc5160_stepper_x:virtual_endstop
+full_steps_per_rotation: 400
+endstop_pin: tmc2209_stepper_x:virtual_endstop
 position_endstop: -11
 position_min: -11
 position_max: 351
-homing_speed:  50
+homing_speed:  55
 homing_retract_dist: 0
 
-[tmc5160 stepper_x]
-cs_pin: PD11
-spi_bus: spi1
-diag1_pin: ^!PG9
-interpolate: False
-run_current: 1.5
+[tmc2209 stepper_x]
+uart_pin: PD11
+diag_pin: ^PG9
+interpolate:  false
+run_current: 1.6
 stealthchop_threshold: 0
-sense_resistor: 0.075
-driver_sgt: 3
-
-;[autotune_tmc stepper_x]
-;motor: ldo-42sth48-2504ac
-;sgt: 2
-;voltage: 24
+sense_resistor: 0.110
+driver_tbl:1
+driver_toff:1
+driver_hstrt:0
+driver_hend:0
+driver_sgthrs:147
+driver_pwm_autoscale:True
+driver_pwm_autograd:True
+driver_pwm_grad:6
+driver_pwm_ofs:36
+driver_pwm_reg:15
+driver_pwm_lim:4
+driver_semin:2
+driver_semax:4
+driver_seup:3
+driver_sedn:2
+driver_seimin:1
+driver_iholddelay:12
+driver_multistep_filt:True
 
 [stepper_y]
 step_pin: PF13
 dir_pin: !PF12
 enable_pin: !PF14
-rotation_distance: 32
+rotation_distance: 50
 microsteps: 64
-full_steps_per_rotation: 200
-endstop_pin: tmc5160_stepper_y:virtual_endstop
+full_steps_per_rotation: 400
+endstop_pin: tmc2209_stepper_y:virtual_endstop
 position_min: -4
 position_max: 355
 position_endstop: -4
-homing_speed: 50
+homing_speed: 55
 homing_retract_dist: 0
 
-[tmc5160 stepper_y]
-cs_pin: PC4
-spi_bus: spi1
-diag1_pin: ^!PG6
-interpolate: False
-run_current:  1.5
+[tmc2209 stepper_y]
+uart_pin: PC4
+diag_pin: ^PG6
+interpolate: false
+run_current:  1.6
 stealthchop_threshold: 0
-sense_resistor: 0.075
-driver_sgt: 3
-
-;[autotune_tmc stepper_y]
-;motor: ldo-42sth48-2504ac
-;sgt:2
-;voltage: 24
+sense_resistor: 0.110
+driver_tbl:1
+driver_toff:1
+driver_hstrt:0
+driver_hend:0
+driver_sgthrs:145
+driver_pwm_autoscale:True
+driver_pwm_autograd:True
+driver_pwm_grad:6
+driver_pwm_ofs:36
+driver_pwm_reg:15
+driver_pwm_lim:4
+driver_semin:2
+driver_semax:4
+driver_seup:3
+driver_sedn:2
+driver_seimin:1
+driver_iholddelay:12
+driver_multistep_filt:True
 
 [stepper_z]
 step_pin: PF9
@@ -74,7 +96,7 @@ homing_retract_dist: 2
 cs_pin: PF2
 spi_bus: spi1
 interpolate: true
-run_current: 0.8
+run_current: 1
 sense_resistor: 0.110
 stealthchop_threshold: 0
 
@@ -90,7 +112,7 @@ microsteps: 16
 cs_pin: PE4
 spi_bus: spi1
 interpolate: true
-run_current: 0.8
+run_current: 1
 sense_resistor: 0.110
 stealthchop_threshold: 0
 
@@ -106,7 +128,7 @@ microsteps: 16
 cs_pin: PE1
 spi_bus: spi1
 interpolate: True
-run_current: 0.8
+run_current: 1
 sense_resistor: 0.110
 stealthchop_threshold: 0
 
@@ -122,22 +144,6 @@ microsteps: 16
 cs_pin: PD3
 spi_bus: spi1
 interpolate: true
-run_current: 0.8
+run_current: 1
 sense_resistor: 0.110
 stealthchop_threshold: 0
-
-[autotune_tmc stepper_z]
-motor: fysetc-17HS19-2004S-C
-voltage: 24
-
-[autotune_tmc stepper_z1]
-motor: fysetc-17HS19-2004S-C
-voltage: 24
-
-[autotune_tmc stepper_z2]
-motor: fysetc-17HS19-2004S-C
-voltage: 24
-
-[autotune_tmc stepper_z3]
-motor: fysetc-17HS19-2004S-C
-voltage: 24
