@@ -13,7 +13,7 @@ voltage: 24
 step_pin: PG0
 dir_pin: !PG1
 enable_pin: !PF15
-rotation_distance: 40
+rotation_distance: 50
 microsteps: 64
 full_steps_per_rotation: 200
 endstop_pin: tmc2209_stepper_x:virtual_endstop
@@ -37,7 +37,7 @@ driver_sgthrs:99
 step_pin: PF13
 dir_pin: PF12
 enable_pin: !PF14
-rotation_distance: 40
+rotation_distance: 50
 microsteps: 64
 full_steps_per_rotation: 200
 endstop_pin: tmc2209_stepper_y:virtual_endstop
